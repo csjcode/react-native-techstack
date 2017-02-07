@@ -22,3 +22,31 @@ Techstack demo from Udemy class on React Native by Stephen Grider
 * Action: Turn 'asdf' into an array
 * Reducer: If the action "type" is "split" take the string and make into an array
 * State: ["a","s","d","f"]
+
+------------------------------
+
+11-79 - More on Redux
+
+* JSPlaygrounds has the Redux library built-in: type: Redux and you get back {}
+* `const store = Redux.createStore()`
+* result `Error: Expected the reducer to be a function.`
+* You have to put in at least 1 reducer function or your will get an error
+```javascript
+const reducer = () => [];
+const store = Redux.createStore(reducer);
+```
+* At any tmie we can ask the store for it's current state
+```javascript
+const reducer = () => [];
+const store = Redux.createStore(reducer);
+store.getState();
+```
+* This will return []
+* 
+
+
+
+
+
+
+.
