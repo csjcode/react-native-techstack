@@ -127,6 +127,12 @@ return state;
 return [ ...state, action.payload ];
 ```
 
+------------------------------
+
+11-81. Application Boilerplate
+
+* We need to install Redux
+* npm install --save redux react-redux
 
 
 
