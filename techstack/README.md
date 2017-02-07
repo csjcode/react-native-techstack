@@ -77,9 +77,55 @@ store.getState();
 
 11-80 - Redux is Hard
 
+* Redux is one of the best libraries to scale apps.
+* Actions modify the state in one predictable way.
+* State will always be an array
+* Lets make a new reducer
+* Add another character to end of array
+* We need to add the previous result (add letter to current state)
+* To do that we change the state
 
+```javascript
+const reducer = (state = [], action) => {
+  if (action.type === 'split_string'){
+    return action.payload.split('');
+  } else if (action.type === 'add_character'){
+    // state.push(action.payload); // original, then removed
+    // return state; // original, then removed
+    return [ ...state, action.payload ];
+  }
+  return state;
+};
 
+const store = Redux.createStore(reducer);
 
+const action = { type: 'split_string', payload:'asdf' };
+const action2 = { type: 'add_character', payload:'a' };
+
+store.getState();
+store.dispatch(action);
+store.getState();
+store.dispatch(action2);
+store.getState();
+```
+
+** CAREFUL **
+
+* We made a mistake above. We should not mutate state.
+* We always return brand new objects from reducers
+* To fix this REMOVE:
+
+```javascript
+state.push(action.payload);
+return state;
+
+```
+
+* To fix this ADD:
+
+```javascript
+return [ ...state, action.payload ];
+```
 
 
 
