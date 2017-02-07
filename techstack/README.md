@@ -31,18 +31,61 @@ Techstack demo from Udemy class on React Native by Stephen Grider
 * `const store = Redux.createStore()`
 * result `Error: Expected the reducer to be a function.`
 * You have to put in at least 1 reducer function or your will get an error
+
 ```javascript
 const reducer = () => [];
 const store = Redux.createStore(reducer);
 ```
+
 * At any tmie we can ask the store for it's current state
+
 ```javascript
 const reducer = () => [];
 const store = Redux.createStore(reducer);
 store.getState();
 ```
 * This will return []
-* 
+
+* Next we will create an action
+
+```javascript
+const reducer = () => [];
+const store = Redux.createStore(reducer);
+store.getState();
+const action = { type: 'split_string', payload:'asdf' }
+```
+
+* Next we add state to the reducer AND store.dispatch(action)
+
+```javascript
+const action = { type: 'split_string', payload:'asdf' };
+const reducer = (state = [], action) => {
+  if (action.type === 'split_string'){
+    return action.payload.split('');
+  }
+  return state;
+};
+
+const store = Redux.createStore(reducer);
+
+store.getState();
+store.dispatch(action)
+store.getState();
+```
+
+------------------------------
+
+11-80 - Redux is Hard
+
+
+
+
+
+
+
+
+
+
 
 
 
