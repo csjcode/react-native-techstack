@@ -178,9 +178,13 @@ export default combineReducers({
 * In App, import `import reducers from './reducers';`
 * `<Provider store={createStore(reducers)}>`
 
-* This the bare minimum for a Redux application. 
+* This the bare minimum for a Redux application.
 
 
+###  83. Rendering the Header
+
+* Create a src/components/common folder
+* Create Header - copy from previous project
 
 
 
