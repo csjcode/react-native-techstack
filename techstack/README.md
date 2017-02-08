@@ -238,6 +238,53 @@ export default combineReducers({
 
 ###  86. JSON CopyPaste
 
+------------------------------
+
+###  87. Connect Function
+
+* Now we need to import the list into thr reducer.
+* import data at top of file - make sure to stipluate .json (.js is default)
+* Now, LibraryReducer shows:
+```javascript
+import data from './LibaryList.json';
+
+export default () => data;
+
+```
+* to view this you use console.log(store.getState()) and it should give back the JSON data
+* Create new component src\components\LibraryList.js
+
+```javascript
+import React, { Component } from 'react';
+class LibraryList extends Component {
+  render() {
+    return;
+  }
+}
+export default LibraryList;
+```
+
+* At this point without redux we could just import the data, however with redux we have to dispatch an action
+* We do this with Connect
+* Connect is a tool to conect from the component to the redux store.
+* Wrap the LibraryList wth connect.
+* To do this (1) import the connect helper
+* (2) Add the connect()(LibraryList) at bottom
+```javascript
+import React, { Component } from 'react';
+import connect from 'react-redux';
+class LibraryList extends Component {
+  render() {
+    return;
+  }
+}
+export default connect()(LibraryList);
+```
+
+* This calls function connect, when it's called it returns a function, call that return with LibraryList
+* 
+
+
 
 
 
