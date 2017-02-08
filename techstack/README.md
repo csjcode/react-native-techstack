@@ -180,11 +180,29 @@ export default combineReducers({
 
 * This the bare minimum for a Redux application.
 
+------------------------------
 
 ###  83. Rendering the Header
 
 * Create a src/components/common folder
 * Create Header - copy from previous project
+* Copy in all the components/common from previous project
+* In App import Header and
+
+```javascript
+<View>
+  <Header headerText="Tech Stack" />
+</View>
+```
+
+* NOTE: One tricky thing on provider is it can only have 1 child component. So that is why we wrap with the View tag.
+
+------------------------------
+
+###  84. Reducer and State Design
+
+
+
 
 
 
