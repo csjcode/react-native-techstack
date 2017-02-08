@@ -3,7 +3,7 @@ Techstack demo from Udemy class on React Native by Stephen Grider
 
 ------------------------------
 
-11-77 - Application Setup
+### 11-77 - Application Setup
 
 * We're going to be using Redux
 * Render a list of elements in a performant way
@@ -14,7 +14,7 @@ Techstack demo from Udemy class on React Native by Stephen Grider
 
 ------------------------------
 
-11-78 - Basic Redux
+### 11-78 - Basic Redux
 
 * We're goin to be doing some basic Redux examples
 * Helper demo screen: https://stephengrider.github.io/JSPlaygrounds/
@@ -25,7 +25,7 @@ Techstack demo from Udemy class on React Native by Stephen Grider
 
 ------------------------------
 
-11-79 - More on Redux
+### 11-79 - More on Redux
 
 * JSPlaygrounds has the Redux library built-in: type: Redux and you get back {}
 * `const store = Redux.createStore()`
@@ -75,7 +75,7 @@ store.getState();
 
 ------------------------------
 
-11-80 - Redux is Hard
+### 11-80 - Redux is Hard
 
 * Redux is one of the best libraries to scale apps.
 * Actions modify the state in one predictable way.
@@ -129,7 +129,7 @@ return [ ...state, action.payload ];
 
 ------------------------------
 
-11-81. Application Boilerplate
+### 11-81. Application Boilerplate
 
 * We need to install Redux
 * `npm install --save redux react-redux`
@@ -138,7 +138,7 @@ return [ ...state, action.payload ];
 
 ------------------------------
 
-11-82. More on Redux Boilerplate
+### 11-82. More on Redux Boilerplate
 
 * Add 2 new modules for Redux
 
@@ -150,7 +150,7 @@ import { createStore } from 'redux';
 * redux library is not meant for only react, it's agnostic
 * react-redux binds redux to react
 
-* Add Provider tag and createStore
+* STORE: Add Provider tag and createStore
 
 ```javascript
 <Provider store={createStore}>
@@ -159,7 +159,28 @@ import { createStore } from 'redux';
 ```
 
 * See Redux Store image in Research
-* 
+
+* REDUCER: Next we're going to create a REDUCER
+* Create a folder reducers and file index.js
+* We're going to use this index.js file for putting in a bunch of library pointers
+* `import { combineReducers } from 'redux'`
+* We use this so we can list all the reducers in one file.
+* next we add an export statement so the current is:
+
+```javascript
+import { combineReducers } from 'redux';
+
+export default combineReducers({
+  libraries: () => []
+});
+```
+
+* In App, import `import reducers from './reducers';`
+* `<Provider store={createStore(reducers)}>`
+
+* This the bare minimum for a Redux application. 
+
+
 
 
 
