@@ -207,7 +207,47 @@ export default combineReducers({
 * We need to get data intot the reducer.
 * Different types of REDUCERS: (1) State with list of tech libraries, (2) State with one open currently selected library
 * Lets make those into 2 REDUCERS: (1) Library Reducer (id, name, description), (2) Selection Reducer (id)
-* 
+
+
+------------------------------
+
+###  85. Library List data
+
+* Library Reducer should return a static list of data to our user
+* reducers/index.js
+* Create file in reducers folder LibraryReducer.js most basic boilerplate `export default () => [];`
+* Wire it up in the reducers/index.js
+* Full index.js
+```javascript
+import { combineReducers } from 'redux';
+import LibraryReducer from 'LibraryReducer';
+
+export default combineReducers({
+  libraries: LibraryReducer
+});
+
+```
+
+* We have one reducer called "LibraryReducer". That is assigned to the key "libraries".
+* LibraryReducer returns an empty aray at this point if console.log(store.getState())
+* We'll make a separate file to house the list of tech libraries
+* Make new file reducers/LibraryList.json
+* Add contents from Grider's github
+
+------------------------------
+
+###  86. JSON CopyPaste
+
+
+
+
+
+
+
+
+
+
+
 
 
 
