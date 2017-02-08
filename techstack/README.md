@@ -201,7 +201,13 @@ export default combineReducers({
 
 ###  84. Reducer and State Design
 
-
+* We want to show a list to the user.
+* We will have a file to show list of libraries.
+* Produce some data (reducers). Reducers put the data in state.
+* We need to get data intot the reducer.
+* Different types of REDUCERS: (1) State with list of tech libraries, (2) State with one open currently selected library
+* Lets make those into 2 REDUCERS: (1) Library Reducer (id, name, description), (2) Selection Reducer (id)
+* 
 
 
 
