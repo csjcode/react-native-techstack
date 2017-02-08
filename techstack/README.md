@@ -132,7 +132,38 @@ return [ ...state, action.payload ];
 11-81. Application Boilerplate
 
 * We need to install Redux
-* npm install --save redux react-redux
+* `npm install --save redux react-redux`
+* install eslint script and Boilerplate
+* make src/app.js
+
+------------------------------
+
+11-82. More on Redux Boilerplate
+
+* Add 2 new modules for Redux
+
+```javascript
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+```
+
+* redux library is not meant for only react, it's agnostic
+* react-redux binds redux to react
+
+* Add Provider tag and createStore
+
+```javascript
+<Provider store={createStore}>
+  <View />
+</Provider>
+```
+
+* See Redux Store image in Research
+* 
+
+
+
+
 
 
 
