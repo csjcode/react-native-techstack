@@ -282,12 +282,28 @@ export default connect()(LibraryList);
 ```
 
 * This calls function connect, when it's called it returns a function, call that return with LibraryList
-* 
+
+------------------------------
+
+###  88. MapStateToProps with Connect
+
+* Heres how to use connect
+* create a function called mapStateToProps
+* Purpose of this is to take global state object, take some properties off as props
+* Add library list to App.js
+* If you return an object in mapStateToProps then it will show up as a prop
+```javascript
+const mapStateToProps = state => {
+  return { libraries: state.libraries };
+};
+```
+* A this point in the debug console you have 2 main ibjects (and some errors): dispatch object and libraries
+* The connect helper forges a connection between the React and Redux sides of the application
 
 
+------------------------------
 
-
-
+###  89. A Quick Review and Breather
 
 
 
