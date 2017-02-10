@@ -381,10 +381,37 @@ render() {
 
 ------------------------------
 
-92. Rendering a Single Row
+### 92. Rendering a Single Row
 
+* Lets make a new component called ListItem
+```javascript
+import React, { Component } from 'react';
+class ListItem extends Component {
+  render() {
+    return(
+    );
+  }
+}
 
+export default ListItem;
 
+```
+
+* Import this into LibraryList
+* Now in renderRow we put the ListItem component
+* Next, we need to tell it to show a particular tech library
+* We'll put in an argument called library `renderRow(library){`
+* Remember the name of the prop does not have to be library, but we'll use that name for the prop.
+
+```javascript
+renderRow(library){
+  return <ListItem library={library} />;
+}
+```
+
+------------------------------
+
+### 93. Styling the List
 
 
 
