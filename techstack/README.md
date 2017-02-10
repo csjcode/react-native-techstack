@@ -326,6 +326,69 @@ See image (App-89)
 ###  90. The Theory of ListView
 
 
+* The approach we are currently taking is fine for a small amoutn of data.
+* However, if we have thousands of lines of data we need a better approach
+* Let's pretend we have a longer list, and come up with a new strategy.
+* Currently we are mapping over components in a list. see (image)
+* That is bad-- doing a new component for each list item - that's a bad idea because lots of memory to render many components not being even screen
+* We should reduce our memory usage and create less components upfront
+* To address this ListView is a native component that fixes this.
+* The ListView figures out which items are visible and only creates components for those. (see image)
+* In fact it uses the same visible components just swaps out data
+
+------------------------------
+
+###  91. ListView in Practice
+
+* ListView will go in our LibraryList component
+* `import { ListView } from 'react-native';`
+* We're going to put the logic of the ListView inside componentWillMount lifecycle method
+
+```javascript
+componentWillMount() {
+  const ds = new ListView.DataSource({
+    rowHasChanged: (r1, r2) => r1 != r2
+  });
+  this.dataSource = ds.cloneWithRows(this.props.libraries)
+}
+```
+* Now in render we'll make it show up
+```javascript
+render() {
+  return(
+    <ListView dataSource={this.dataSource} />
+  );
+}
+```
+
+* Next we have to instruct ListView to render only a single row.
+* Add prop renderRow - renderRow
+
+```javascript
+renderRow(){
+
+}
+
+render() {
+  return(
+    <ListView
+      dataSource={this.dataSource}
+      renderRow={this.renderRow}
+    />
+  );
+}
+```
+
+------------------------------
+
+92. Rendering a Single Row
+
+
+
+
+
+
+
 
 
 
