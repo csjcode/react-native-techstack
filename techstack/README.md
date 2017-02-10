@@ -392,9 +392,7 @@ class ListItem extends Component {
     );
   }
 }
-
 export default ListItem;
-
 ```
 
 * Import this into LibraryList
@@ -413,8 +411,21 @@ renderRow(library){
 
 ### 93. Styling the List
 
+* this.props.library can be referenced
+* We need to get the title and description (fields specified int he JSON file)
+* in ListItem `import CardSection from './common';`
+* `import { Text } from 'react-native'`
+```javascript
+render() {
+  return(
+    <CardSection>
+      <Text>{this.props.library.title}</Text>
+    </CardSection>
+  );
+}
+```
 
-
+* commit
 
 
 
