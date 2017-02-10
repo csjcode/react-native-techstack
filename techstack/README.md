@@ -427,6 +427,10 @@ render() {
 
 * commit
 
+* add styles object
+* destructure the styles
+* 
+
 
 
 
