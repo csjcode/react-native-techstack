@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListView } from 'react-native';
+import { ListView, View } from 'react-native';
 import { connect } from 'react-redux';
 import ListItem from './ListItem';
 
@@ -16,10 +16,12 @@ class LibraryList extends Component {
 
   render() {
     return(
-      <ListView
-        dataSource={this.dataSource}
-        renderRow={this.renderRow}
-      />
+      <View style={{height:400, marginTop:20}}>
+        <ListView
+          dataSource={this.dataSource}
+          renderRow={this.renderRow}
+        />
+      </View>
     );
   }
 }
