@@ -305,7 +305,25 @@ const mapStateToProps = state => {
 
 ###  89. A Quick Review and Breather
 
+See image (App-89)
 
+* When our app boots up Redux creates a Store
+* When the Store is created it calls the Libraries Reducer one time
+* It gets a piece of State called libraries which is an array containing a list of objects
+* Each object represents one tech library we want to show up on the screen
+* Next, we pass it to the provider as a prop.
+* The provider is a React component that aids in the communication between React and Redux
+* Next the App componet is rendered which renders the Library List component.
+* When the LibraryList component is about to render the Connect boots up.
+* Connect then reaches to provider and get current State.
+* Connect then passes to mapStateToProps so the prop can be used in the component
+* `return { libraries: state.libraries };` the libraries can be renamed to "data" or somehting else but NOT state.libraries
+
+
+
+------------------------------
+
+###  90. The Theory of ListView
 
 
 
