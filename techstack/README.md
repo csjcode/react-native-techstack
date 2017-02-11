@@ -488,10 +488,40 @@ export const selectLibrary = () => {
 * (5) Import connect helper from react-redux `import { connect } from 'react-redux';`
 * (6) Setup that connect helper at the bottom of the file. NOTE: first argument is for mapStateToProps, so null if not needed
 * `export default connect(null,actions)(ListItem);`
-* This tells us that the action will be dispathed to the rdux store
+* This tells us that the action will be dispathed to the redux store, and passed as props
 * Add console.log statement to check on the props.
 
+commit
 
+* Note: We are mot there, but we still don;t have anything to receive the touch/press event in the CardSection component
+
+------------------------------
+
+### 97. Adding a Touchable
+
+* We need to import a Touchable component
+* There are 4 types of Touchable components.
+* TouchableWithoutFeedback is what we want
+* `import { Text, TouchableWithoutFeedback, View } from 'react-native';`
+* Wrap the jsx render in TouchableWithoutFeedback and View
+* Now a prop is added for the onPress
+```javascript
+<TouchableWithoutFeedback
+  onPress={() => this.props.selectLibrary(id)} >
+```
+* Some destructuring
+`const { id, title} = this.props.library;`
+
+* Check on this: add console.log to SelectionReducer, also add state, action
+
+```javascript
+export default (state, action) => {
+  console.log(action);
+  return null;
+};
+```
+
+* Last thing we have to do is have ou Reducer action of a select_library get & return that ID
 
 
 
