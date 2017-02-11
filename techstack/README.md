@@ -544,10 +544,35 @@ export default (state = null, action) => {
 
 ```
 
+### 99. Expanding a Row
 
+* import state result into ListItem
+* mapStateToProps is what does this.
+* selectedLibraryId piece of state comes from reducer that was assigned to it (see reducers/index)
+* Code for mapStateToProps in ListItem
+```javascript
+const mapStateToProps = state => {
+  return { selectedLibraryId: state.selectedLibraryId };
+};
 
+export default connect(mapStateToProps, actions)(ListItem);
+```
 
+* Now we can compare the Id when the component is generated to the selectedLibraryId in state
+* If they are equal show more detail
+* Use a helper method called renderDescription
+```javascript
+renderDescription() {
+  const { library, selectLibraryId } = this.props;
+  if (library.id === selectLibraryId) {
+    return (
+      <Text>{library.description}</Text>
+    );
+  }
+}
+```
 
+* Add the renderDescription under the CardSection
 
 
 
