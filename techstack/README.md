@@ -451,6 +451,35 @@ export default combineReducers({
 
 ### 95. Introducting Action Creators
 
+* We need to find out how to update the selected ID state
+
+### Component -> Create Action -> Action -> Reducer
+
+* Action creator is called by Component. It's a javascript function that creates an action.
+* An action is a plain javascript object with a "type" property
+* Think of this as a command or instruction to be passed off to the Reducer
+* We can create an action with the ID, in the reducer recorder the ID
+
+* So let's make a new action directory, and in that make a new file called index.js.
+* Like the reducer/index list of reducers, it will hold all our actions.
+* inside we need the type and payload:
+
+```javascript
+export const selectLibrary = () => {
+  return (
+    type: 'select_library',
+    payload: libraryId
+  );
+};
+
+```
+
+------------------------------
+
+### 96. Calling Action Creators
+
+
+
 
 
 
