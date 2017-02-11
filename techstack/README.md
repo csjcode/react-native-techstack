@@ -524,7 +524,25 @@ export default (state, action) => {
 * Last thing we have to do is have ou Reducer action of a select_library get & return that ID
 
 
+### 98. Rules of Reducers - BOILERPLATE
 
+* We need to return the ID instead of null in the SelectionReducer
+
+### Reducer Boilerplate
+
+* Boilplate we will always use for a reducer switch (state=null sets a default if there is no state):
+
+```javascript
+export default (state = null, action) => {
+  switch (action.type){
+    case 'select_library':
+    return action.payload;
+    default:
+      return state;
+  }
+};
+
+```
 
 
 
