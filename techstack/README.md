@@ -478,6 +478,32 @@ export const selectLibrary = () => {
 
 ### 96. Calling Action Creators
 
+* Here isthe process for alling an action creator.
+* (1): We need to decide where we want to call the action creator from.
+* (2): We have to wire this up to Redux.
+* (3): Go to file where you want to create it. In that file:
+* (4): `import * as actions from '../actions';`
+* This gets the actions from our actions/index.js (index.js is default if just stating a folder)
+* * as actions is to import all exported functions from that file
+* (5) Import connect helper from react-redux `import { connect } from 'react-redux';`
+* (6) Setup that connect helper at the bottom of the file. NOTE: first argument is for mapStateToProps, so null if not needed
+* `export default connect(null,actions)(ListItem);`
+* This tells us that the action will be dispathed to the rdux store
+* Add console.log statement to check on the props.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
