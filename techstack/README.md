@@ -434,6 +434,23 @@ render() {
 
 ### 94. Creating the Selection Reducer
 
+* We need to create a new Reducer - Selection Reducer
+* Create new SelectionReducer.js in the reducers directory
+* `export default () => {};`
+* Note: We cannot leave this undefined  
+* So to start we can just return null `export default () => { return null; };`
+* Wire it up: remember we for every Reducer we create we have to wire it back up in the reducers/index.js
+```javascript
+export default combineReducers({
+  libraries: LibraryReducer,
+  selectedLibraryId: SelectionReducer
+});
+```      
+
+------------------------------
+
+### 95. Introducting Action Creators
+
 
 
 
