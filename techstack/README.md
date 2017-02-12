@@ -597,8 +597,15 @@ const mapStateToProps = (state, ownProps) => {
 * Change renderDescription putting in expanded variable
 
 
+------------------------------
 
+### 101. Animations
 
+* Wrap Text tag in CardSection
+* Style for cleaner expanded text description `<Text style={{flex:1}}>{library.description}</Text>`
+* import another react native primitive called LayoutAnimation
+* From the Udemy course questions: in index.android.js improt UIManager and add `UIManager.setLayoutAnimationEnabledExperimental(true);
+`
 
 
 
