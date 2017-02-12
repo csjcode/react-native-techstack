@@ -523,6 +523,7 @@ export default (state, action) => {
 
 * Last thing we have to do is have ou Reducer action of a select_library get & return that ID
 
+------------------------------
 
 ### 98. Rules of Reducers - BOILERPLATE
 
@@ -544,6 +545,8 @@ export default (state = null, action) => {
 
 ```
 
+------------------------------
+
 ### 99. Expanding a Row
 
 * import state result into ListItem
@@ -560,7 +563,8 @@ export default connect(mapStateToProps, actions)(ListItem);
 
 * Now we can compare the Id when the component is generated to the selectedLibraryId in state
 * If they are equal show more detail
-* Use a helper method called renderDescription
+* Use a helper method called renderDescription, this is an important part of the logic:
+
 ```javascript
 renderDescription() {
   const { library, selectLibraryId } = this.props;
@@ -574,9 +578,23 @@ renderDescription() {
 
 * Add the renderDescription under the CardSection
 
+------------------------------
 
+### 100. Moving Logic Out of Components
 
-
+* We need to get some styling done.
+* Also we need to move out some of the logic of the renderDescription, so we can check if it's been expanded.
+* Let's make a change to mapStateToProps in the ListItem
+* Add ownProps `const mapStateToProps = (state, ownProps) => {`
+* this ownProps is the same as this.props - so we can add/manipulate any props into the mapStateToProps section
+* By changing this section we can decide which props to pass down to the component, and remove prop logic from the component
+```javascript
+const mapStateToProps = (state, ownProps) => {
+  const expanded = state.selectedLibraryId === ownProps.library.id;
+  return { expanded };
+};
+```
+* Change renderDescription putting in expanded variable
 
 
 
