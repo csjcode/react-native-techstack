@@ -607,6 +607,11 @@ const mapStateToProps = (state, ownProps) => {
 * From the Udemy course questions: in index.android.js improt UIManager and add `UIManager.setLayoutAnimationEnabledExperimental(true);
 `
 
+### 102. Wrapup
+
+https://www.udemy.com/the-complete-react-native-and-redux-course/learn/v4/t/lecture/5744930
+
+
 
 
 
